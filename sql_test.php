@@ -6,7 +6,9 @@ if (mysqli_connect_errno())
   die("error Mr. ");
 
 
+
 $sql = "insert into website(web_id,web_name) values('123','你好')";
+
 $result = mysqli_query($conn, $sql);
 /*
  while($row = mysqli_fetch_array($result)){
