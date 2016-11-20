@@ -306,6 +306,37 @@ hr {
 	{
 		font-size: 1.2em;
 	}
-	
 
-
+/* mousemove */	
+	.jastips{
+		z-index: 9;
+		color: #690;
+		border-bottom: 1px dotted #690;
+		text-decoration: none;
+	}
+	a.jastips:hover{
+		position: relative;
+		z-index: 99;
+		cursor: crosshair;
+	}
+	a.jastips span{
+		width: 300px;
+		height: 200px;
+		display: none;
+	}
+	a.jastips:hover span{
+		display: block;
+		position: absolute;
+		float: left;
+		white-space: normal;
+		word-break: break-word;
+		top: -2.25em;
+		left: 0;
+		background: #666;
+		border: 1px solid #000;
+		color: #fff;
+		padding: 1px 5px;
+		margin: 0;
+		z-index: 9;
+		text-align: left;
+	}
