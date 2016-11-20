@@ -5,11 +5,17 @@ mysqli_set_charset($conn,"utf8");
 if (mysqli_connect_errno())
   die("error Mr. ");
 
-$sql = "SELECT * FROM web_course_information";
+
+$sql = "insert into website(web_id,web_name) values('333','')";
 $result = mysqli_query($conn, $sql);
-
+/*
  while($row = mysqli_fetch_array($result)){
-    echo $row." ";
-}
+$i=0;
+	while($i<7){
 
+    echo $row[$i++]." ";
+	}
+	echo "\n";
+}
+*/
 ?>
