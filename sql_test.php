@@ -9,7 +9,7 @@ $sql = "SELECT * FROM web_course_information";
 $result = mysqli_query($conn, $sql);
 
  while($row = mysqli_fetch_array($result)){
-    echo $row."\n";
+    echo $row." ";
 }
 
 ?>
