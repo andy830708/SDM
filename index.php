@@ -45,7 +45,7 @@ mysqli_query($link, "set names utf8");
 			</div>
 			<table id="table">
 			<?php
-			$course_Info = mysqli_query($link, "select * from web_course_information order by announcement_date desc");
+			$course_Info = mysqli_query($link, "select * from web_course_information order by web_id");
                         for($i=1; $i<=mysqli_num_rows($course_Info); $i++){
                             $rs = mysqli_fetch_row($course_Info);
 			    $course_tName = mysqli_query($link, "select Web_name from website where Web_ID = '$rs[1]'");
@@ -63,6 +63,18 @@ mysqli_query($link, "set names utf8");
                     
 			   }
                        }
+
+			echo "<tr><td><br/></td></tr>";
+			$activity = mysqli_query($link, "select * from web_public_information");
+                        for($i=1; $i<=mysqli_num_rows($activity); $i++){
+			    $rs = mysqli_fetch_row($activity);
+			    $information = $rs[6];
+			    $URL = $rs[5];
+			    $start_date = $rs[8];
+			    $end_date = $rs[9];
+
+			    echo "<tr><td>" . "<a target=\"_blank\" href=\"" . $URL . "\">" . $information . "</a>"  ."[" . $start_date . " ~ " . $end_date . "]" . "</td></tr>";
+			}
                        ?>
 			</table>
 			</div>
