@@ -5,7 +5,7 @@ if (mysqli_connect_errno())
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 mysqli_query($link, "set names utf8");
-$data = mysqli_query($link, "select * from web_course_information");
+$course_Info = mysqli_query($link, "select * from web_course_information");
 ?>
 
 
@@ -47,16 +47,17 @@ $data = mysqli_query($link, "select * from web_course_information");
 			<table id="table">
 			<?php
                         for($i=1; $i<=10; $i++){
-                            $rs = mysqli_fetch_row($data);
-                            $anouce_Date = $rs[3];
+                            $rs = mysqli_fetch_row($course_Info);
+			    $course_Name = mysqli_query($link, "select 'Web_name' from website where 'Web_ID' = $rs[1]");
+			    $anouce_Date = $rs[3];
                             $information = $rs[6];
-                    
+                   	     
                            if(strlen($information) <= 80){  
-				echo "<tr><td>". "[SDM] ". $anouce_Date. ": ". $information . "</td></tr>";
+				echo "<tr><td>". "[". $course_Name . "] ". $anouce_Date. ": ". $information . "</td></tr>";
 			   }	
        			   else{	
 				$information_short = mb_substr( $information, 0, 50, "utf-8");
-                                echo "<tr><td>". "[SDM] ". $anouce_Date. ": ". $information_short . "<a href=\"#\" class=\"jastips\">". "...more". "<span>". "[SDM] ". $anouce_Date. ": ". $information. "</span></a></td></tr>";
+                                echo "<tr><td>". "[". $course_Name . "] ". $anouce_Date. ": ". $information_short . "<a href=\"#\" class=\"jastips\">". "...more". "<span>". "[SDM] ". $anouce_Date. ": ". $information. "</span></a></td></tr>";
                     
 			   }
                        }
