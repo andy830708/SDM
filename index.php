@@ -26,38 +26,40 @@ $course_Info = mysqli_query($link, "select * from web_course_information");
 	<div id="menu-wrapper">
 		<div id="menu" class="container">
 			<ul>
-				<li class="current_page_item"><a href="#">¥D­¶</a></li>
-				<li><a href="#">Ãö©ó§Ú­Ì</a></li>
-				<li><a href="#">µn¤J</a></li>
-			</ul>
+		<!--		<li class="current_page_item"><a href="#">MainPage</a></li>
+				<li><a href="#">ÃƒÃ¶Â©Ã³Â§ÃšÂ­ÃŒ</a></li>
+				<li><a href="#">ÂµnÂ¤J</a></li>
+		--!>	</ul>
 		</div>
 		<!-- end #menu --> 
 	</div>
 	<div id="banner">
 		<div id="logo">
-			<h1><a href="index.html">E-Board</a></h1>
+			<h1><a href="index.php">E-Board</a></h1>
 		</div>
 	</div>
 	<div id="page" class="container">
 		<div id="content">
 			<div class="title">
-				<h2>³Ì·s°T®§</h2>
+				<h2>The Latest News</h2>
 				<span class="byline"></span> 
 			</div>
 			<table id="table">
 			<?php
                         for($i=1; $i<=10; $i++){
                             $rs = mysqli_fetch_row($course_Info);
-			    $course_Name = mysqli_query($link, "select 'Web_name' from website where 'Web_ID' = $rs[1]");
+			    $course_tName = mysqli_query($link, "select Web_name from website where Web_ID = '003'");
+			    $course_Name = mysqli_fetch_row($course_tName);
+			    
 			    $anouce_Date = $rs[3];
                             $information = $rs[6];
                    	     
                            if(strlen($information) <= 80){  
-				echo "<tr><td>". "[". $course_Name . "] ". $anouce_Date. ": ". $information . "</td></tr>";
+				echo "<tr><td>". "[". $course_Name[0] . "] ". $anouce_Date. ": ". $information . "</td></tr>";
 			   }	
        			   else{	
 				$information_short = mb_substr( $information, 0, 50, "utf-8");
-                                echo "<tr><td>". "[". $course_Name . "] ". $anouce_Date. ": ". $information_short . "<a href=\"#\" class=\"jastips\">". "...more". "<span>". "[". $course_Name . "] ". $anouce_Date. ": ". $information. "</span></a></td></tr>";
+                                echo "<tr><td>". "[". $course_Name[0] . "] ". $anouce_Date. ": ". $information_short . "<a href=\"#\" class=\"jastips\">". "...more". "<span>". "[". $course_Name[0] . "] ". $anouce_Date. ": ". $information. "</span></a></td></tr>";
                     
 			   }
                        }
@@ -66,16 +68,16 @@ $course_Info = mysqli_query($link, "select * from web_course_information");
 			</div>
 		<div id="sidebar">
 			<div class="title">
-				<h2>³õÀ]®ø®§</h2>
+				<h2>Open Time</h2>
 			</div>
 			<ul class="style2">
-				<li><a href="#">08:00-22:00 ¹Ï®ÑÀ]</a></li>
-				<li><a href="#">08:00-22:00 °·¨­©Ð</a></li>
+				<li><a href="#">08:00-22:00 Library</a></li>
+				<li><a href="#">08:00-22:00 GYM</a></li>
 				<li><a href="#">08:00-22:00 LAB</a></li>
-				<li><a href="#">08:00-22:00 ºÞ¤@</a></li>
-				<li><a href="#">08:00-22:00 ªÀ¬ì¹Ï</a></li>
-				<li><a href="#">08:00-22:00 ºÞ¤G</a></li>
-				<li><a href="#">08:00-22:00 ¥x¬ì</a></li>
+				<li><a href="#">08:00-22:00 Management Building I</a></li>
+				<li><a href="#">08:00-22:00 Library of Social Science</a></li>
+				<li><a href="#">08:00-22:00 Management Builiding II</a></li>
+				<li><a href="#">08:00-22:00 NTU</a></li>
 			</ul>
 		</div>
 	</div>

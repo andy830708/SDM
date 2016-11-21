@@ -7,7 +7,7 @@ if (mysqli_connect_errno())
 
 
 
-$sql = "insert into website(web_id,web_name) values('123','你好')";
+$sql = "insert into website(web_id,web_name) values('1233','你好')";
 
 $result = mysqli_query($conn, $sql);
 /*
