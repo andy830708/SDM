@@ -44,25 +44,22 @@ $data = mysqli_query($link, "select * from web_course_information");
 				<h2>³Ì·s°T®§</h2>
 				<span class="byline"></span> </div>
 				<table id="table">
-					<?php
+			<?php
                         for($i=1; $i<=10; $i++){
                             $rs = mysqli_fetch_row($data);
                             $anouce_Date = $rs[3];
                             $information = $rs[6];
-                    ?>
-                            <?php
-								if(strlen($information) <= 80){
-                            ?>
-								<tr><td><?php echo "[SDM] "+$anouce_Date+ ": "+ $information;?></td></tr>
-                            <?php
-								}
-								else{
-								$information_short = mb_substr( $information, 0, 60, "utf-8");
-                            ?>
-								<tr><td><?php echo "[SDM] "+ $anouce_Date+ ": "+ $information_short;?><a href="#" class="jastips">...more<span><?php echo "[SDM] "+ $anouce_Date+ ": "+ $information;}?></span></a></td></tr>
-                    <?php
-						}
-                    ?>
+                    
+                           if(strlen($information) <= 80){  
+				echo "<tr><td>"+ "[SDM] "+$anouce_Date+ ": "+ $information + "</td></tr>";
+			   }	
+       			   else{	
+				$information_short = mb_substr( $information, 0, 60, "utf-8");
+                                echo "<tr><td>"+ "[SDM] "+ $anouce_Date+ ": "+ $information_short + "<a href=\"#\" class=\"jastips\">"+ "...more"+ "<span>"+ "[SDM] "+ $anouce_Date+ ": "+ $information+ "</span></a></td></tr>";
+                    
+			   }
+                       }
+                      ?>
 					<tr><td>[SDM]11/14: slides for Design Patterns and some code examples available.</td></tr>
 					<tr><td>[SDM]11/02: HW#4 due 2PM 11/16.</td></tr>
 					<tr><td>[SDM]10/27: Term Project finalized; it is identical to the draft of 10/20.</td></tr>
