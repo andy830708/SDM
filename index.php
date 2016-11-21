@@ -42,8 +42,9 @@ $data = mysqli_query($link, "select * from web_course_information");
 		<div id="content">
 			<div class="title">
 				<h2>³Ì·s°T®§</h2>
-				<span class="byline"></span> </div>
-				<table id="table">
+				<span class="byline"></span> 
+			</div>
+			<table id="table">
 			<?php
                         for($i=1; $i<=10; $i++){
                             $rs = mysqli_fetch_row($data);
@@ -70,7 +71,7 @@ $data = mysqli_query($link, "select * from web_course_information");
 					<tr><td>[SDM]10/12: contact email addresses of domain modeling instructors<a href="#" class="jastips">...more<span>10/12: contact email addresses of domain modeling instructors: Xscar_su@gss.com.twX, Xlynn_lin@gss.com.twX, Xpauline_peng@gss.com.twX (between the enclosing pair of X's).</span></a></td></tr>
 					<tr><td>[SDM]10/12: slides for Domain Modeling available.</td></tr>
 					<tr><td>[SDM]10/12: slides for UML Diagrams available.</td></tr>
-				</table>
+			</table>
 			</div>
 		<div id="sidebar">
 			<div class="title">
