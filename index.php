@@ -57,7 +57,7 @@ $data = mysqli_query($link, "select * from web_course_information");
                             <?php
 								}
 								else{
-								$information_short = my_substr( $information, 0, 60, "utf-8");
+								$information_short = mb_substr( $information, 0, 60, "utf-8");
                             ?>
 								<tr><td><?php echo "[SDM] "+ $anouce_Date+ ": "+ $information_short;?><a href="#" class="jastips">...more<span><?php echo "[SDM] "+ $anouce_Date+ ": "+ $information;}?></span></a></td></tr>
                     <?php
