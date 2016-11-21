@@ -54,11 +54,11 @@ $course_Info = mysqli_query($link, "select * from web_course_information");
 			    $anouce_Date = $rs[3];
                             $information = $rs[6];
                    	     
-                           if(strlen($information) <= 80){  
+                           if(strlen($information) <= 50){  
 				echo "<tr><td>". "[". $course_Name[0] . "] ". $anouce_Date. ": ". $information . "</td></tr>";
 			   }	
        			   else{	
-				$information_short = mb_substr( $information, 0, 50, "utf-8");
+				$information_short = mb_substr( $information, 0, 40, "utf-8");
                                 echo "<tr><td>". "[". $course_Name[0] . "] ". $anouce_Date. ": ". $information_short . "<a href=\"#\" class=\"jastips\">". "...more". "<span>". "[". $course_Name[0] . "] ". $anouce_Date. ": ". $information. "</span></a></td></tr>";
                     
 			   }
@@ -74,9 +74,9 @@ $course_Info = mysqli_query($link, "select * from web_course_information");
 				<li><a href="#">08:00-22:00 Library</a></li>
 				<li><a href="#">08:00-22:00 GYM</a></li>
 				<li><a href="#">08:00-22:00 LAB</a></li>
-				<li><a href="#">08:00-22:00 Management Building I</a></li>
-				<li><a href="#">08:00-22:00 Library of Social Science</a></li>
-				<li><a href="#">08:00-22:00 Management Builiding II</a></li>
+				<li><a href="#">08:00-22:00 Building</a></li>
+				<li><a href="#">08:00-22:00 Social</a></li>
+				<li><a href="#">08:00-22:00 Builiding</a></li>
 				<li><a href="#">08:00-22:00 NTU</a></li>
 			</ul>
 		</div>
