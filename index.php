@@ -1,4 +1,5 @@
-nk = mysqli_connect("140.112.107.81:13306", "root" , "2016sdmtest" , "eboard");
+<?php
+$link = mysqli_connect("140.112.107.81:13306", "root" , "2016sdmtest" , "eboard");
 if (mysqli_connect_errno())
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
