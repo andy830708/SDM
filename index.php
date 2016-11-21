@@ -52,25 +52,15 @@ $data = mysqli_query($link, "select * from web_course_information");
                             $information = $rs[6];
                     
                            if(strlen($information) <= 80){  
-				echo "<tr><td>"+ "[SDM] "+$anouce_Date+ ": "+ $information + "</td></tr>";
+				echo "<tr><td>". "[SDM] ". $anouce_Date. ": ". $information . "</td></tr>";
 			   }	
        			   else{	
 				$information_short = mb_substr( $information, 0, 60, "utf-8");
-                                echo "<tr><td>"+ "[SDM] "+ $anouce_Date+ ": "+ $information_short + "<a href=\"#\" class=\"jastips\">"+ "...more"+ "<span>"+ "[SDM] "+ $anouce_Date+ ": "+ $information+ "</span></a></td></tr>";
+                                echo "<tr><td>". "[SDM] ". $anouce_Date. ": ". $information_short . "<a href=\"#\" class=\"jastips\">". "...more". "<span>". "[SDM] ". $anouce_Date. ": ". $information. "</span></a></td></tr>";
                     
 			   }
                        }
-                      ?>
-					<tr><td>[SDM]11/14: slides for Design Patterns and some code examples available.</td></tr>
-					<tr><td>[SDM]11/02: HW#4 due 2PM 11/16.</td></tr>
-					<tr><td>[SDM]10/27: Term Project finalized; it is identical to the draft of 10/20.</td></tr>
-					<tr><td>[SDM]10/27: slides for Bluemix and for Team Collaboration available.</td></tr>
-					<tr><td>[SDM]10/20: Draft of Term Project revised for further feedbacks, to be finalized by 10/26.</td></tr>
-					<tr><td>[SDM]10/19: HW#3 due 2PM 10/26.</td></tr>
-					<tr><td>[SDM]10/12: data modeling group exercise due 5:30PM 10/17; email <a href="#" class="jastips">...more<span>10/12: data modeling group exercise due 5:30PM 10/17; email completed solutions to the instructors.</span></a></td></tr>
-					<tr><td>[SDM]10/12: contact email addresses of domain modeling instructors<a href="#" class="jastips">...more<span>10/12: contact email addresses of domain modeling instructors: Xscar_su@gss.com.twX, Xlynn_lin@gss.com.twX, Xpauline_peng@gss.com.twX (between the enclosing pair of X's).</span></a></td></tr>
-					<tr><td>[SDM]10/12: slides for Domain Modeling available.</td></tr>
-					<tr><td>[SDM]10/12: slides for UML Diagrams available.</td></tr>
+                       ?>
 			</table>
 			</div>
 		<div id="sidebar">
