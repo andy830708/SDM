@@ -326,12 +326,12 @@ hr {
 	}
 	a.jastips:hover span{
 		display: block;
-		position: fixed;
+		position: relative;
 		float: left;
 		white-space: normal;
 		word-break: break-word;
-		top: 20em;
-		left: 50em;
+		top: 0;
+		left: 30em;
 		background: #666;
 		border: 1px solid #000;
 		color: #fff;
