@@ -1,5 +1,5 @@
 <?php
-$link = mysqli_connect("140.112.107.81:13306", "root" , "2016sdmtest" , "eboard");
+$link = mysqli_connect("172.10.0.22:3306", "root" , "2016sdmtest" , "eboard");
 if (mysqli_connect_errno())
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -67,33 +67,44 @@ mysqli_query($link, "set names utf8");
 			   }	
        			   else{	
 				$information_short = mb_substr( $information, 0, 60, "utf-8");
-                                echo "<tr><td>". $anouce_Date. ": ". $information_short . "<a class=\"jastips\">". "...more". "<span>". "[". $course_Name[0] . "] ". $anouce_Date. ": ". $information. "</span></a></td></tr>";
+                                echo "<tr><td>". $anouce_Date. ": ". $information_short . "<a class=\"jastips\">". "...more". "<span>".  $anouce_Date. ": ". $information. "</span></a></td></tr>";
                     
 			   }
-                       }
+			}
 
 			$activity = mysqli_query($link, "select * from web_public_information order by web_id");
 			#first demo 
 			$anouce_name = "first";
 			#end
-		for($i=1; $i<=mysqli_num_rows($activity); $i++){
-		    $rs = mysqli_fetch_row($activity);
-		    $anouce_tType = mysqli_query($link, "select Web_name from website where Web_ID = '$rs[1]'");
-		    $anouce_type  = mysqli_fetch_row($anouce_tType); 
-		    if($anouce_name != $anouce_type[0]){
-			$anouce_name = $anouce_type[0];
-			echo "<tr><td><br/><font size=\"20\"><strong><b>". $anouce_name ."</b></strong></font></td></tr>"; 
-		    }
-		    $information = $rs[6];
-		    $URL = $rs[5];
-		    $start_date = $rs[8];
-		    $end_date = $rs[9];
-		    
-		    if($URL == NULL){
-			echo "<tr><td>[". $start_date . " ~ " . $end_date . "]<a target=\"_blank\">" . $information . "</a>" . "</td></tr>"; 
-		    } else{
-			echo "<tr><td>[" . $start_date . " ~ " . $end_date ."]<a target=\"_blank\" href=\"" . $URL . "\">" . $information . "</a>"  ."</td></tr>";
-		    }					
+			for($i=1; $i<=mysqli_num_rows($activity); $i++){
+			  $rs = mysqli_fetch_row($activity);
+			  $anouce_tType = mysqli_query($link, "select Web_name from website where Web_ID = '$rs[1]'");
+		   	  $anouce_type  = mysqli_fetch_row($anouce_tType); 
+  		   	  if($anouce_name != $anouce_type[0]){
+			    $anouce_name = $anouce_type[0];
+			    echo "<tr><td><br/><font size=\"20\"><strong><b>". $anouce_name ."</b></strong></font></td></tr>"; 
+		  	  }
+	 	   	  $information = $rs[6];
+		  	  $URL = $rs[5];
+			  $start_date = $rs[8];
+			  $end_date = $rs[9];
+			    
+			  if($URL == NULL){
+				if(strlen($information) <= 72){
+					 echo "<tr><td>[". $start_date . " ~ " . $end_date . "]<a target=\"_blank\">" . $information . "</a>" . "</td></tr>";
+				}else{
+					$information_short = mb_substr( $information, 0, 25, "utf-8");
+ 					
+		   			echo "<tr><td>[" . $start_date . " ~ " . $end_date . "]<a target=\"_blank\" href=\"" .$URL . "\">" . $information_short . "</a> <a class=\"jastips\">" . "...more" . "<span>[" . $start_date . " ~ " . $end_date . "]</br>" . $information . "</span></a></td></tr>";
+                       		 }
+			} else{
+				if(strlen($information) <= 72){
+					echo "<tr><td>[" . $start_date . " ~ " . $end_date ."]<a target=\"_blank\" href=\"" . $URL . "\">" . $information . "</a>"  ."</td></tr>";
+				}else{
+					$information_short = mb_substr( $information, 0, 25, "utf-8");
+					echo "<tr><td>[" . $start_date . " ~ " . $end_date . "]<a target=\"_blank\" href=\"" .$URL . "\">" . $information_short . "</a> <a class=\"jastips\">" . "...more" . "<span>[" . $start_date . " ~ " . $end_date . "]</br>" . $information . "</span></a></td></tr>";
+			}
+		  }					
 		}
 	       ?>
 			</table>
