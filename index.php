@@ -62,12 +62,12 @@ mysqli_query($link, "set names utf8");
 			    $anouce_Date = $rs[3];
                             $information = $rs[6];
                    	     
-                           if(strlen($information) <= 50){  
-				echo "<tr><td>". "[". $course_Name[0] . "] ". $anouce_Date. ": ". $information . "</td></tr>";
+                           if(strlen($information) <= 80){  
+				echo "<tr><td>". $anouce_Date. ": ". $information . "</td></tr>";
 			   }	
        			   else{	
-				$information_short = mb_substr( $information, 0, 40, "utf-8");
-                                echo "<tr><td>". "[". $course_Name[0] . "] ". $anouce_Date. ": ". $information_short . "<a class=\"jastips\">". "...more". "<span>". "[". $course_Name[0] . "] ". $anouce_Date. ": ". $information. "</span></a></td></tr>";
+				$information_short = mb_substr( $information, 0, 60, "utf-8");
+                                echo "<tr><td>". $anouce_Date. ": ". $information_short . "<a class=\"jastips\">". "...more". "<span>". "[". $course_Name[0] . "] ". $anouce_Date. ": ". $information. "</span></a></td></tr>";
                     
 			   }
                        }
@@ -82,9 +82,9 @@ mysqli_query($link, "set names utf8");
 			    $end_date = $rs[9];
 			    
 			    if($URL == NULL){
-				echo "<tr><td>" . "<a target=\"_blank\">" . $information . "</a>[" . $start_date . " ~ " . $end_date . "]" . "</td></tr>"; 
+				echo "<tr><td>[". $start_date . " ~ " . $end_date . "]<a target=\"_blank\">" . $information . "</a>" . "</td></tr>"; 
 			    } else{
-			    	echo "<tr><td>" . "<a target=\"_blank\" href=\"" . $URL . "\">" . $information . "</a>"  ."[" . $start_date . " ~ " . $end_date . "]" . "</td></tr>";
+			    	echo "<tr><td>[" . $start_date . " ~ " . $end_date ."]<a target=\"_blank\" href=\"" . $URL . "\">" . $information . "</a>"  ."</td></tr>";
   			    }					
 			}
                        ?>
