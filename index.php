@@ -46,11 +46,19 @@ mysqli_query($link, "set names utf8");
 			<table id="table">
 			<?php
 			$course_Info = mysqli_query($link, "select * from web_course_information order by web_id");
+			#-----------here is for first DEMO------------
+			$tmp_course_name = "first";
+			#--------end--------
                         for($i=1; $i<=mysqli_num_rows($course_Info); $i++){
                             $rs = mysqli_fetch_row($course_Info);
 			    $course_tName = mysqli_query($link, "select Web_name from website where Web_ID = '$rs[1]'");
 			    $course_Name = mysqli_fetch_row($course_tName);
-			    
+			    #-----------here is for first DEMO-----------
+			    if($tmp_course_name != $course_Name[0]){
+				$tmp_course_name = $course_Name[0];
+				echo "<tr><td><br/><font size=\"20\"><b>" . $tmp_course_name . "</b></font></td></tr>";
+			    }
+			    #----------end----------
 			    $anouce_Date = $rs[3];
                             $information = $rs[6];
                    	     
@@ -59,12 +67,12 @@ mysqli_query($link, "set names utf8");
 			   }	
        			   else{	
 				$information_short = mb_substr( $information, 0, 40, "utf-8");
-                                echo "<tr><td>". "[". $course_Name[0] . "] ". $anouce_Date. ": ". $information_short . "<a href=\"#\" class=\"jastips\">". "...more". "<span>". "[". $course_Name[0] . "] ". $anouce_Date. ": ". $information. "</span></a></td></tr>";
+                                echo "<tr><td>". "[". $course_Name[0] . "] ". $anouce_Date. ": ". $information_short . "<a class=\"jastips\">". "...more". "<span>". "[". $course_Name[0] . "] ". $anouce_Date. ": ". $information. "</span></a></td></tr>";
                     
 			   }
                        }
 
-			echo "<tr><td><br/></td></tr>";
+			echo "<tr><td><br/><font size=\"20\"><b>Campus Activity</b></font></td></tr>";
 			$activity = mysqli_query($link, "select * from web_public_information");
                         for($i=1; $i<=mysqli_num_rows($activity); $i++){
 			    $rs = mysqli_fetch_row($activity);
@@ -72,8 +80,12 @@ mysqli_query($link, "set names utf8");
 			    $URL = $rs[5];
 			    $start_date = $rs[8];
 			    $end_date = $rs[9];
-
-			    echo "<tr><td>" . "<a target=\"_blank\" href=\"" . $URL . "\">" . $information . "</a>"  ."[" . $start_date . " ~ " . $end_date . "]" . "</td></tr>";
+			    
+			    if($URL == NULL){
+				echo "<tr><td>" . "<a target=\"_blank\">" . $information . "</a>[" . $start_date . " ~ " . $end_date . "]" . "</td></tr>"; 
+			    } else{
+			    	echo "<tr><td>" . "<a target=\"_blank\" href=\"" . $URL . "\">" . $information . "</a>"  ."[" . $start_date . " ~ " . $end_date . "]" . "</td></tr>";
+  			    }					
 			}
                        ?>
 			</table>
@@ -83,13 +95,7 @@ mysqli_query($link, "set names utf8");
 				<h2>Open Time</h2>
 			</div>
 			<ul class="style2">
-				<li><a href="#">08:00-22:00 Library</a></li>
-				<li><a href="#">08:00-22:00 GYM</a></li>
-				<li><a href="#">08:00-22:00 LAB</a></li>
-				<li><a href="#">08:00-22:00 Building</a></li>
-				<li><a href="#">08:00-22:00 Social</a></li>
-				<li><a href="#">08:00-22:00 Builiding</a></li>
-				<li><a href="#">08:00-22:00 NTU</a></li>
+				<li><a href="#">08:00-22:30 Library</a></li>
 			</ul>
 		</div>
 	</div>
