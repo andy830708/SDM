@@ -28,10 +28,10 @@ mysqli_query($link, "set names utf8");
 	<!--			<li class="current_page_item"><a href="#">MainPage</a></li>
 				<li><a href="#">Ãö©ó§Ú­Ì</a></li>
 				<li><a href="#">µn¤J</a></li>
-	!-->		</ul> 
-		</div>
+	!-->		</ul>
+		</div> 
 		<!-- end #menu --> 
-
+	</div>
 	<div id="banner">
 		<div id="logo">
 			<h1><a href="index.php">E-Board</a></h1>
