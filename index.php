@@ -95,7 +95,7 @@ mysqli_query($link, "set names utf8");
 				}else{
 					$information_short = mb_substr( $information, 0, 25, "utf-8");
  					
-		   			echo "<tr><td>[" . $start_date . " ~ " . $end_date . "]<a target=\"_blank\" href=\"" .$URL . "\">" . $information_short . "</a> <a class=\"jastips\">" . "...more" . "<span>[" . $start_date . " ~ " . $end_date . "]</br>" . $information . "</span></a></td></tr>";
+		   			echo "<tr><td>[" . $start_date . " ~ " . $end_date  . $information_short . "<a class=\"jastips\">" . "...more" . "<span>[" . $start_date . " ~ " . $end_date . "]</br>" . $information . "</span></a></td></tr>";
                        		 }
 			} else{
 				if(strlen($information) <= 72){
