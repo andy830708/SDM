@@ -28,14 +28,15 @@ mysqli_query($link, "set names utf8");
 	<!--			<li class="current_page_item"><a href="#">MainPage</a></li>
 				<li><a href="#">Ãö©ó§Ú­Ì</a></li>
 				<li><a href="#">µn¤J</a></li>
-	!-->		</ul>
+	!-->			<li><a href="#">E-BOARD</a></li>
+			</ul>
 		</div> 
 		<!-- end #menu --> 
 	</div>
 	<div id="banner">
-		<div id="logo">
+<!--		<div id="logo">
 			<h1><a href="index.php">E-Board</a></h1>
-		</div>
+		</div> --!>
 	</div>
 	<div id="page" class="container">
 		<div id="content">
@@ -95,7 +96,7 @@ mysqli_query($link, "set names utf8");
 				}else{
 					$information_short = mb_substr( $information, 0, 25, "utf-8");
  					
-		   			echo "<tr><td>[" . $start_date . " ~ " . $end_date  . $information_short . "<a class=\"jastips\">" . "...more" . "<span>[" . $start_date . " ~ " . $end_date . "]</br>" . $information . "</span></a></td></tr>";
+		   			echo "<tr><td>[" . $start_date . " ~ " . $end_date  . "]" . $information_short . "<a class=\"jastips\">" . "...more" . "<span>[" . $start_date . " ~ " . $end_date . "]</br>" . $information . "</span></a></td></tr>";
                        		 }
 			} else{
 				if(strlen($information) <= 72){

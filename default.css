@@ -139,7 +139,7 @@ hr {
 	.title h2
 	{
 		font-weight: 400;
-		font-size: 2em;
+		font-size: 2.2em;
 		color: #FF7575;
 	}
 	
@@ -217,6 +217,7 @@ hr {
 		background-size: cover;
 		text-align: center;
 		line-height: 150px;
+		opacity: 0.8;
 	}
 	
 	#banner .image
@@ -241,7 +242,7 @@ hr {
 	padding: 0px 0px 0px 0px;
 	list-style: none;
 	line-height: normal;
-	text-align: right;
+	text-align: left;
 }
 
 #menu li {
@@ -255,7 +256,7 @@ hr {
 	text-decoration: none;
 	text-align: center;
 	text-transform: uppercase;
-	font-size: 1em;
+	font-size: 2em;
 	line-height: 55px;
 	border: none;
 	color: #FFF;
@@ -299,7 +300,7 @@ hr {
 	
 	#sidebar .title h2
 	{
-		font-size: 2em;
+		font-size: 2.2em;
 	}
 	
 	#sidebar .style2 a
