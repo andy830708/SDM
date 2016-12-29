@@ -36,7 +36,7 @@ label {
 }
 /*-- header --*/
 .header-bottom {
-    background-color: #C1DFDC;
+    /*background-color: #C1DFDC;*/
 }
 .navbar-nav {
     float: none;
@@ -44,18 +44,20 @@ label {
     width: 100% ! important;
 }
 .navbar-default {
-    background-color:#f4c1a6! important;
+    background-color:#e08785! important;
     border-color:#f4c1a6 ! important;
 }
 .navbar {
     border-radius: 0px ! important;
 }
 .navbar {
-    position: relative;
+    position: fixed;
     min-height: 50px;
     margin-bottom: 0px;
     border: none ! important;
     float: right;
+    width: 100%;
+    padding: 0 55px 0 55px;
 }
 .logo2{
     position: relative;
@@ -70,7 +72,10 @@ label {
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     color:#1bd4c4;
-   
+    font-size: 1.5em;
+}
+.navbar-left a{
+    color: #fff;
 }
 .glyphicon {
     position: relative;
@@ -95,37 +100,48 @@ label {
     /*padding: 20px 49px ! important;*/
 }
 .logo h1 a {
-    color: #007D73;
+    color: #a94442;
     font-size: 1em;
-    display: block;
+    /*display: block;*/
     font-weight: bold;
     text-decoration: none;
     font-family: 'Antic', sans-serif;
     text-transform: uppercase;
     padding: 0.5em 0;
     text-align: center;
-    background-color: #1bd4c4;
+    background-color: #fd9c9a;
     width: 25%;
     margin: 3em 0 0;
 }
 .logo {
     
 }
-.banner-info {
+.banner-info , .sayHI{
     padding: 5em 0 0;
-    width: 37%;
+    width: 50%;
+    float: left;
+}
+.sayHI h3{
     float: right;
+    font-family: 'Antic', sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #fff;
+}
+.sayHI h3:hover{
+    font-size: 1.9em;
+    color: #1bd4c4;
 }
 /*-- header --*/
 .banner {
-    background: url(../images/1.jpg) no-repeat;
+    background: url(../images/banner.jpg) no-repeat;
     background-size: cover;
     width: 100%;
     min-height: 720px;
 }
 .banner-info h2 {
     font-size: 1.9em;
-    color:#55B1A3;
+    color:#a94442;
     font-weight: 400;
     font-family: 'Antic', sans-serif;
     font-weight:bold;
@@ -197,7 +213,7 @@ label {
 	color:#000;
 }
 /*-- application --*/
-.application h3 {
+.application h3{
     font-size: 1.4em;
 	color:#fff;
     font-weight:700;
@@ -205,7 +221,7 @@ label {
     text-decoration:underline;
     text-align: center;
 }
-.application h3:hover{
+.application h3:hover , .project-top h3:hover{
     color: #500DEB;
 }
 .application p {
@@ -263,7 +279,7 @@ label {
     /*margin: 0 0 1em;*/
     text-align:center;
 }
-.services h5 {
+.services h3 {
     font-size: 1.4em;
     color: #fff;
     font-weight: 700;
@@ -272,7 +288,7 @@ label {
     text-align:center;
     text-decoration:underline;
 }
-.services h5:hover{
+.services h3:hover{
     color: #3FFAEE;
 }
 .services p {
@@ -303,7 +319,7 @@ label {
    /* border-right: 1px solid #EFB698;
     border-bottom: 1px solid #EFB698;*/
     /*padding: 2em 1.5em;*/
-	height: 300px;
+	/*height: 300px;*/
 	width: 25%;
 }
 .ser-left3 {
@@ -330,7 +346,7 @@ label {
     line-height: 1.3em;
 }
 .case h3 {
-    font-size: 2.5em;
+    font-size: 3em;
     color: #fff;
     font-weight: 400;
     font-family: 'Antic', sans-serif;
@@ -408,13 +424,16 @@ label {
 	 border-top: 1px solid #DE8999;
     padding: 2em 0;
 }
-.project h2 {
+.project h2, .case h2, .services h2{
     font-size: 3em;
     color: #fff;
     font-weight: 400;
     font-family: 'Antic', sans-serif;
     /*margin: 0 0 1em;*/
     text-align: center;
+}
+.project h2:hover, .case h2:hover, .services h2:hover{
+    font-size: 3.1em;
 }
 .gallery {
     background-color: #7c9ecc;
@@ -1445,9 +1464,108 @@ address {
     padding: 0;
 }
 }
+
+/* ---------- */
 .dropdown{
-    position: relative;
-    width: 20%;
-    left: 58%;
-    top: -40px;
+    float: right;
+    font-size: 2em;
 }
+.case .dropdown{
+    font-size: 2em;
+}
+.project-top .carousel{
+    height: 210px;
+}
+
+.dropdown-menu a{
+    cursor: pointer;
+}
+
+.dropdown-header a{
+    cursor: default;
+}
+.dropdown-menu .dropdown-header a:hover{
+    color: #262626;
+    text-decoration: none;
+    background-color: #fff;
+}
+.carousel-inner{
+    height: 100%;
+}
+.title{
+    height: 70px;
+}
+a.accordion-toggle{
+    text-align: center;
+}
+/* mousemove */ 
+   /* .jastips{
+        z-index: 9;
+        color: #690;
+        border-bottom: 1px dotted #690;
+        text-decoration: none;
+    }
+    .jastips:hover{
+        color: #690;
+        position: absolute;
+        z-index: 99;
+        cursor: crosshair;
+    }
+    a.jastips span{
+        width: 150px;
+        height: 330px;
+        display: none;
+    }
+    a.jastips:hover span{
+        display: block;
+        position: absolute;
+        float: left;
+        white-space: normal;
+        word-break: break-word;
+        top: 0;
+        left: -6em;
+        background: #666;
+        border: 1px solid #000;
+        color: #fff;
+        padding: 1px 5px;
+        margin: 0;
+        z-index: 9;
+        text-align: left;
+    }*/
+    tr.wed{
+        color: #C94474;
+        font-size: 1.4em;
+        font-weight: bold;
+    }
+
+    .accordion-heading a{
+        text-decoration:underline;
+        color: black ;
+    }
+
+    .project-top h3{
+    font-size: 1.4em;
+    color:#fff;
+    font-weight:700;
+    font-family: 'Antic', sans-serif;
+    text-align: center;
+    }
+
+    .table {
+        text-align: center;
+    }
+    .project{
+        font-family: "微軟正黑體";
+    }
+
+    #course1, #course2, #course3{
+        display: none;
+    }
+
+    #w001, #w003, #w004, #w005, #w006, #w007, #w008, #w010{
+        display: none;
+    }
+
+    .ser-left2:hover, .project-left:hover{
+        font-weight: 600;
+    }
