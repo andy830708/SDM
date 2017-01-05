@@ -261,13 +261,13 @@ function showCeiba(name, contents, num){
 				<!--/.navbar-header-->
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li><a href="#banner" class="scroll">Home</a></li>
-						<li><a href="#about" class="scroll">Activity</a></li>
-						<li><a href="#case" class="scroll">Admin</a></li>
-						<li><a href="#services" class="scroll">Courses</a></li>
-						<li><a href="./login/index.php" class="login">Login</a></li>
-						<li><a href="index.php" class="logout">Logout</a></li>
-						<li><a href="index_CH.php">中文</a></li>
+						<li><a href="#banner" class="scroll">主頁</a></li>
+						<li><a href="#about" class="scroll">活動</a></li>
+						<li><a href="#case" class="scroll">系所</a></li>
+						<li><a href="#services" class="scroll">課程</a></li>
+						<li><a href="./login/index_CH.php" class="login">登入</a></li>
+						<li><a href="index_CH.php" class="logout">登出</a></li>
+						<li><a href="index.php">English</a></li>
 					</ul>
 				</div>
 				<!--/.navbar-collapse-->
@@ -275,11 +275,11 @@ function showCeiba(name, contents, num){
 		</div>
 	</div>
 			<div class="banner-info">
-				<h2>Provide everything you want!</h2>
+				<h2>提供任何你想看的!</h2>
 			</div>
 			<div class="sayHI">
 				<?php
-					echo '<h3>Hello, ' . $_SESSION['userName'].'</h3>';
+					echo '<h3>您好, ' . $_SESSION['userName'].'</h3>';
 				?>
 			</div>
 		</div>
@@ -293,16 +293,16 @@ function showCeiba(name, contents, num){
 			<div class="col-md-4"></div>
 			<div class="col-md-4">
 				<div class="col-md-3"></div>
-				<div class="col-md-4">
-					<h2>Activity</h2>
+				<div class="col-md-5">
+					<h2>活動</h2>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-1">
 					<div class="dropdown">
 								<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
 								    <span class="caret"></span>
 								</button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<li role="presentation" class="dropdown-header"><a>Choose your activity</a></li>
+									<li role="presentation" class="dropdown-header"><a>選擇想看的活動</a></li>
 									<?php
 										$course_name = mysqli_query($link, "select * from website where Web_type<>'課程' and Web_type<>'系所' order by web_id");
 										$course_ID = mysqli_query($link, "select * from website where Web_type<>'課程' and Web_type<>'系所' order by web_id");
@@ -326,16 +326,16 @@ function showCeiba(name, contents, num){
 					<img src="images/acti.jpg" alt=" " class="img-responsive">
 				</div>
 				<div class="col-md-6 project-left">
-						        <h3>Open Time</h3>
+						        <h3>開放時間</h3>
 						    <table class="table table-condensed">
-						    	<tr><td></td><td>Library</td><td>Sports Center</td></tr>
-								<tr><td>Sunday</td><td>8:00 ~ 17:30</td><td>9:00 ~18:00</td></tr>
-								<tr><td>Monday</td><td>8:00 ~ 22:30</td><td>6:00 ~ 22:00</td></tr>
-								<tr><td>Tuesday</td><td>8:00 ~ 22:30</td><td>6:00 ~ 22:00</td></tr>
-								<tr><td>Wednesday</td><td>8:00 ~ 22:30</td><td>6:00 ~ 22:00</td></tr>
-								<tr><td>Thursday</td><td>8:00 ~ 22:30</td><td>6:00 ~ 22:00</td></tr>
-								<tr><td>Friday</td><td>8:00 ~ 22:30</td><td>6:00 ~ 22:00</td></tr>
-								<tr><td>Saturday</td><td>8:00 ~ 22:30</td><td>9:00 ~ 22:00</td></tr>
+						    	<tr><td></td><td>圖書館</td><td>新體</td></tr>
+								<tr><td>星期日</td><td>8:00 ~ 17:30</td><td>9:00 ~18:00</td></tr>
+								<tr><td>星期一</td><td>8:00 ~ 22:30</td><td>6:00 ~ 22:00</td></tr>
+								<tr><td>星期二</td><td>8:00 ~ 22:30</td><td>6:00 ~ 22:00</td></tr>
+								<tr><td>星期三</td><td>8:00 ~ 22:30</td><td>6:00 ~ 22:00</td></tr>
+								<tr><td>星期四</td><td>8:00 ~ 22:30</td><td>6:00 ~ 22:00</td></tr>
+								<tr><td>星期五</td><td>8:00 ~ 22:30</td><td>6:00 ~ 22:00</td></tr>
+								<tr><td>星期六</td><td>8:00 ~ 22:30</td><td>9:00 ~ 22:00</td></tr>
 							</table>
 				</div>
 					<div class="clearfix"></div>
@@ -367,16 +367,16 @@ function showCeiba(name, contents, num){
 			<div class="col-md-4"></div>
 			<div class="col-md-4">
 				<div class="col-md-3"></div>
-				<div class="col-md-4">
-					<h2>Admin</h2>
+				<div class="col-md-5">
+					<h2>系所</h2>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-1">
 					<div class="dropdown">
 						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
 						    <span class="caret"></span>
 						</button>
 						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-							<li role="presentation" class="dropdown-header"><a>Choose your admin</a></li>
+							<li role="presentation" class="dropdown-header"><a>選擇想看的系所</a></li>
 							<?php
 								$course_name = mysqli_query($link, "select * from website where Web_type='系所' order by web_id");
 								$course_ID = mysqli_query($link, "select * from website where Web_type='系所' order by web_id");
@@ -423,16 +423,16 @@ function showCeiba(name, contents, num){
 			<div class="col-md-4"></div>
 			<div class="col-md-4">
 				<div class="col-md-3"></div>
-				<div class="col-md-4">
-					<h2>Courses</h2>
+				<div class="col-md-5">
+					<h2>課程</h2>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-1">
 					<div class="dropdown">
 						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
 						    <span class="caret"></span>
 						</button>
 						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-							<li role="presentation" class="dropdown-header"><a>Choose your class</a></li>
+							<li role="presentation" class="dropdown-header"><a>選擇想看的課程</a></li>
 							<?php
 								$course_name = mysqli_query($link, "select * from website where Web_type='課程' order by web_id");
 								$course_ID = mysqli_query($link, "select * from website where Web_type='課程' order by web_id");

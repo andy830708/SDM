@@ -207,7 +207,7 @@ footer {
   }
   function login(){
     if(anti_a( $("#userName").val())||anti_p( $("#password").val())){  //帳密格式檢驗
-      alert("invalid format, please enter the account and password of Ceiba");
+      alert("帳號密碼格式錯誤，請輸入ceiba帳密");
       return;
   } 
     $(".loader, .mask").show();
@@ -226,9 +226,9 @@ footer {
         $("#login").removeAttr("disabled");
         if(result == "login"){
           //導回主頁
-          window.location.replace("../index.php")
+          window.location.replace("../index_CH.php")
         } else {
-          alert("failed login");
+          alert("登入失敗");
         }
     }});
   }
@@ -240,13 +240,13 @@ footer {
   <div class='preload login--container'>
   <div class='login--form'>
     <div class='login--username-container'>
-      <label>Username</label>
+      <label>帳號</label>
       <input autofocus placeholder='Username' type='text' id="userName">
     </div>
     <div class='login--password-container'>
-      <label>Password</label>
+      <label>密碼</label>
       <input placeholder='Password' type='password' id="password">
-      <button class='js-toggle-login login--login-submit' id="login">Login</button>
+      <button class='js-toggle-login login--login-submit' id="login">登入</button>
     </div>
   </div>
 

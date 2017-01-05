@@ -16,12 +16,14 @@ $options = array(
 );
 $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
+$result = trim($result);
 
-if (strcmp($result, "login successful")) { // Handle error
+if (strcmp($result, "\"successful\"") == 0) {
   $_SESSION['userName'] = $userName;
-  echo true;
+  $_SESSION['password'] = $password;
+  echo "login";
 } else{
-  echo false;
+  echo "fail";
 }
 
 ?>

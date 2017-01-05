@@ -2348,88 +2348,41 @@ if (typeof jQuery === 'undefined') {
   // ==============
 
   $(window).on('load', function () {
-    $("#b001").click(function(){
-      $("#w001").css("display", "block");
-      $("#b001").css("display", "none");
-      update_b(1, "#b001");
+    $(".btnb").click(function(){
+      console.log($(this).attr("id").substr(1));
+      $("#w"+ $(this).attr("id").substr(1)).css("display", "block");
+      $("#b"+ $(this).attr("id").substr(1)).css("display", "none");
+      update_b(1, "#b"+ $(this).attr("id").substr(1));
     });
-    $("#x001").click(function(){
-      $("#w001").css("display", "none");
-      $("#b001").css("display", "block");
-      update_b(0, "#b001");
+    $(".btnx").click(function(){
+      console.log($(this).attr("id").substr(1));
+      $("#w"+ $(this).attr("id").substr(1)).css("display", "none");
+      $("#b"+ $(this).attr("id").substr(1)).css("display", "block");
+      update_b(0, "#b"+ $(this).attr("id").substr(1));
     });
-    $("#b003").click(function(){
-      $("#w003").css("display", "block");
-      $("#b003").css("display", "none");
-      update_b(1, "#b003");
+    // $("#b001").click(function(){
+    //   $("#w001").css("display", "block");
+    //   $("#b001").css("display", "none");
+    //   update_b(1, "#b001");
+    // });
+    // $("#x001").click(function(){
+    //   $("#w001").css("display", "none");
+    //   $("#b001").css("display", "block");
+    //   update_b(0, "#b001");
+    // });
+    
+    $(".logout").click(function(){
+      $.ajax({
+        async : false,
+        url: "ses_destroy.php",
+        type: "POST",
+        success: function(result){
+          // alert(result);
+        }
+      });
+      $(".logout, .sayHI").css("display", "none");
+      $(".login").css("display", "block");
     });
-    $("#x003").click(function(){
-      $("#w003").css("display", "none");
-      $("#b003").css("display", "block");
-      update_b(0, "#b003");
-    });
-    $("#b004").click(function(){
-      $("#w004").css("display", "block");
-      $("#b004").css("display", "none");
-      update_b(1, "#b004");
-    });
-    $("#x004").click(function(){
-      $("#w004").css("display", "none");
-      $("#b004").css("display", "block");
-      update_b(0, "#b004");
-    });
-    $("#b005").click(function(){
-      $("#w005").css("display", "block");
-      $("#b005").css("display", "none");
-      update_b(1, "#b005");
-    });
-     $("#x005").click(function(){
-      $("#w005").css("display", "none");
-      $("#b005").css("display", "block");
-      update_b(0,"#x005");
-    });
-    $("#b006").click(function(){
-      $("#w006").css("display", "block");
-      $("#b006").css("display", "none");
-      update_b(1, "#b006");
-    });
-     $("#x006").click(function(){
-      $("#w006").css("display", "none");
-      $("#b006").css("display", "block");
-      update_b(0,"#x006");
-    });
-    $("#b007").click(function(){
-      $("#w007").css("display", "block");
-      $("#b007").css("display", "none");
-      update_b(1, "#b007");
-    });
-     $("#x007").click(function(){
-      $("#w007").css("display", "none");
-      $("#b007").css("display", "block");
-      update_b(0,"#x007");
-    });
-    $("#b008").click(function(){
-      $("#w008").css("display", "block");
-      $("#b008").css("display", "none");
-      update_b(1, "#b008");
-    });
-     $("#x008").click(function(){
-      $("#w008").css("display", "none");
-      $("#b008").css("display", "block");
-      update_b(0,"#x008");
-    });
-     $("#b010").click(function(){
-      $("#w010").css("display", "block");
-      $("#b010").css("display", "none");
-      update_b(1, "#b010");
-    });
-    $("#x010").click(function(){
-      $("#w010").css("display", "none");
-      $("#b010").css("display", "block");
-      update_b(0, "#b010");
-    });
-
-     
  
     $('[data-spy="affix"]').each(function () {
       var $spy = $(this)
@@ -2443,6 +2396,7 @@ if (typeof jQuery === 'undefined') {
       Plugin.call($spy, data)
     })
   });
+
 function update_b(option, wid){
     var data = new Object();
     data.web_id = $(wid).attr('value');
@@ -2459,6 +2413,16 @@ function update_b(option, wid){
       }
     });
   }
+
+$(document).ready(function(){//日期自動
+  var date = new Date();
+  var weekdays = ["0", "1", "2", "3", "4", "5", "6"];//日~一
+  var t_weekday = weekdays[date.getDay()];
+  var weekday = parseInt(t_weekday)+2;
+
+  var child = "nth-child("+weekday+")";
+  $("table tr:"+child).addClass("wed");
+});
 
 }(jQuery);
 

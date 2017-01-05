@@ -1,7 +1,7 @@
 html, body{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 100%;
-	background:#fff;
+	background:#f4c1a6;
 }
 body a,.grid_1,plan_1,plan_1.one,plan_1.two,i.icon1, i.icon2, i.icon3, i.icon4, i.icon5, i.icon6 {
 	transition:0.5s all;
@@ -220,6 +220,7 @@ label {
     font-family: 'Antic', sans-serif;
     text-decoration:underline;
     text-align: center;
+    height: 60px;
 }
 .application h3:hover , .project-top h3:hover{
     color: #500DEB;
@@ -287,6 +288,7 @@ label {
     margin: 1em 0 0em;
     text-align:center;
     text-decoration:underline;
+    height: 60px;
 }
 .services h3:hover{
     color: #3FFAEE;
@@ -318,7 +320,7 @@ label {
 .ser-left2 {
    /* border-right: 1px solid #EFB698;
     border-bottom: 1px solid #EFB698;*/
-    /*padding: 2em 1.5em;*/
+    padding: 2em 1.5em;
 	/*height: 300px;*/
 	width: 25%;
 }
@@ -346,12 +348,17 @@ label {
     line-height: 1.3em;
 }
 .case h3 {
-    font-size: 3em;
+    font-size: 1.4em;
     color: #fff;
-    font-weight: 400;
+    font-weight: 700;
     font-family: 'Antic', sans-serif;
-    text-align: center;
-    margin: 0 0 1.5em;
+    margin: 1em 0 0em;
+    text-align:center;
+    text-decoration:underline;
+    height: 60px;
+}
+.case h3:hover{
+    color: #FFEB3B;
 }
 .specifications p {
     font-size: 1em;
@@ -1558,11 +1565,7 @@ a.accordion-toggle{
         font-family: "微軟正黑體";
     }
 
-    #course1, #course2, #course3{
-        display: none;
-    }
-
-    #w001, #w003, #w004, #w005, #w006, #w007, #w008, #w010{
+    ul li .logout, .sayHI{
         display: none;
     }
 
